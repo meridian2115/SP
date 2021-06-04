@@ -31,7 +31,7 @@ namespace SP.Data.Methods
                 $"\t\tl_bas_ai.ba_uuid, \r\n" +
                 $"\t\t{is_hier} \r\n" +
                 $");\r\n" +
-                $"else\r\n" +
+                $"else\r\n" + // 123
                 $"\tupdate ai.dict_descr_ai\r\n" +
                 $"\tset\r\n";
             result += !is_hier ? $"\t\tsql_str ='{sql_str}',\r\n" : $"\t\thier_sql_str = '{hier_sql}'\r\n";
