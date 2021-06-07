@@ -25,6 +25,7 @@ namespace SP
         private string hier_sql = "";
         private bool is_hier = false;
         private string report_uuid = "";
+        private Root tmp;
 
         public Form1()
         {
@@ -119,7 +120,7 @@ namespace SP
                 textBox2.Text = edit_report.Report_setting_name;
                 checkBox1.Checked = edit_report.Enabled_flag;
                 //json_text.Text = Encoding.UTF8.GetString(edit_report.Report_setting_structure);
-                Root tmp = JsonConvert.DeserializeObject<Root>(Encoding.UTF8.GetString(edit_report.Report_setting_structure));
+                tmp = JsonConvert.DeserializeObject<Root>(Encoding.UTF8.GetString(edit_report.Report_setting_structure));
                 dataGridView1.Rows.Clear();
                 int i = 1;
                 foreach (var SheetSettingList in tmp.SheetSettingList)

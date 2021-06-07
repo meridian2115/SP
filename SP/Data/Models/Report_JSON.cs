@@ -841,14 +841,14 @@ namespace SP.Data.Models
         [JsonProperty("attributeList")]
         public List<AttributeList> AttributeList { get; set; }
 
-        //[JsonProperty("reportHeaderTemplate")]
-        //public List<List<>> ReportHeaderTemplate { get; set; }
+        [JsonProperty("reportHeaderTemplate")]
+        public List<List<TableRow>> ReportHeaderTemplate { get; set; }
 
         [JsonProperty("cellAreaRHT")]
         public string CellAreaRHT { get; set; }
 
-        //[JsonProperty("tableHeaderTemplate")]
-        //public List<List<>> TableHeaderTemplate { get; set; }
+        [JsonProperty("tableHeaderTemplate")]
+        public List<List<TableRow>> TableHeaderTemplate { get; set; }
 
         [JsonProperty("cellAreaTHT")]
         public string CellAreaTHT { get; set; }
