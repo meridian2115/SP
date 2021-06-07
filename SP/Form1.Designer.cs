@@ -29,11 +29,11 @@ namespace SP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Узел0");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Узел2");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Узел0");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Узел2");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -113,14 +113,14 @@ namespace SP
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "Узел0";
-            treeNode4.Text = "Узел0";
-            treeNode5.Name = "Узел2";
-            treeNode5.Text = "Узел2";
-            treeNode6.Name = "Узел0";
-            treeNode6.Text = "Узел0";
+            treeNode10.Name = "Узел0";
+            treeNode10.Text = "Узел0";
+            treeNode11.Name = "Узел2";
+            treeNode11.Text = "Узел2";
+            treeNode12.Name = "Узел0";
+            treeNode12.Text = "Узел0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode12});
             this.treeView1.Size = new System.Drawing.Size(300, 761);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -340,6 +340,7 @@ namespace SP
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(139, 20);
             this.dateTimePicker2.TabIndex = 6;
+            this.dateTimePicker2.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -347,6 +348,7 @@ namespace SP
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
             this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.Visible = false;
             // 
             // label4
             // 
@@ -356,6 +358,7 @@ namespace SP
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Период активности";
+            this.label4.Visible = false;
             // 
             // checkBox1
             // 
@@ -414,10 +417,11 @@ namespace SP
             // 
             this.button1.Location = new System.Drawing.Point(14, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(125, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Сохранить";
+            this.button1.Text = "Сохранить Json";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

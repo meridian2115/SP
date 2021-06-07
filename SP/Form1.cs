@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace SP
         private string dict_name = "";
         private string hier_sql = "";
         private bool is_hier = false;
+        private string report_uuid = "";
 
         public Form1()
         {
@@ -69,6 +71,7 @@ namespace SP
             {
                 MockRS_repository_ai report = new MockRS_repository_ai();
                 RS_repository_ai edit_report = report.GetReport(treeView1.SelectedNode.Name);
+                report_uuid = treeView1.SelectedNode.Name;
                 textBox2.Text = edit_report.Report_setting_name;
                 checkBox1.Checked = edit_report.Enabled_flag;
                 //json_text.Text = Encoding.UTF8.GetString(edit_report.Report_setting_structure);
@@ -173,6 +176,26 @@ namespace SP
             hier_sql = is_hier ? richTextBox1.Text : null;
             richTextBox1.Text = GenDictUpdate.UpdateDict(dict_code, sql_str, dict_name, hier_sql, is_hier);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Производит сохранение json
+            MockRS_repository_ai report = new MockRS_repository_ai();
+            RS_repository_ai edit_report = report.GetReport(report_uuid);
+            string path = @"D:\ReportJson\";
+            DirectoryInfo dirInfo = new DirectoryInfo(path);
+            if (!dirInfo.Exists)
+            {
+                dirInfo.Create();
+            }
+            using (FileStream fstream = new FileStream($"{path}\\{edit_report.Report_setting_name}.json", FileMode.OpenOrCreate))
+            {
+                // преобразуем строку в байты
+                byte[] array = Encoding.Default.GetBytes(Encoding.UTF8.GetString(edit_report.Report_setting_structure));
+                // запись массива байтов в файл
+                fstream.Write(array, 0, array.Length);
+            }
         }
     }
 }
