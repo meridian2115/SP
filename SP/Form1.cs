@@ -93,12 +93,14 @@ namespace SP
                     }
                     i++;
                 }
-
+                richTextBox3.Text += $"\r\nПолучен список фильтров для отчета с uuid {edit_report.RS_repository_uuid}";
             }
+            button3.Enabled = false;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            button3.Enabled = false;
             //Вытаскиваем sql выражение
             richTextBox1.Clear();
             string z = "";
@@ -167,6 +169,7 @@ namespace SP
                 label6.Text = "Не соответствует report_filters";
                 label6.ForeColor = Color.Red;
             }
+            richTextBox3.Text += $"\r\nОткрыт cкрипт для фильтра {dict_code}";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -175,7 +178,8 @@ namespace SP
             sql_str = is_hier ? null : richTextBox1.Text;
             hier_sql = is_hier ? richTextBox1.Text : null;
             richTextBox1.Text = GenDictUpdate.UpdateDict(dict_code, sql_str, dict_name, hier_sql, is_hier);
-
+            button3.Enabled = true;
+            richTextBox3.Text += $"\r\nСгенерирован скрипт для фильтра {dict_code}";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -183,19 +187,29 @@ namespace SP
             //Производит сохранение json
             MockRS_repository_ai report = new MockRS_repository_ai();
             RS_repository_ai edit_report = report.GetReport(report_uuid);
-            string path = @"D:\ReportJson\";
-            DirectoryInfo dirInfo = new DirectoryInfo(path);
-            if (!dirInfo.Exists)
-            {
-                dirInfo.Create();
-            }
-            using (FileStream fstream = new FileStream($"{path}\\{edit_report.Report_setting_name}.json", FileMode.OpenOrCreate))
-            {
-                // преобразуем строку в байты
-                byte[] array = Encoding.Default.GetBytes(Encoding.UTF8.GetString(edit_report.Report_setting_structure));
-                // запись массива байтов в файл
-                fstream.Write(array, 0, array.Length);
-            }
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.FileName = edit_report.Report_setting_name;
+            saveFile.DefaultExt = ".json";
+            if (saveFile.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = saveFile.FileName;
+            File.WriteAllText(filename, Encoding.UTF8.GetString(edit_report.Report_setting_structure));
+            richTextBox3.Text += $"\r\nСохранение Json файла {saveFile.FileName} выполнено успешно";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Сохрание сгенерированного скрипта
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.FileName = dict_code;
+            saveFile.DefaultExt = ".sql";
+            if (saveFile.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = saveFile.FileName;
+            // сохраняем текст в файл
+            File.WriteAllText(filename, richTextBox1.Text);
+            richTextBox3.Text += $"\r\nСохранение скрипта {saveFile.FileName} выполнено успешно";
         }
     }
 }

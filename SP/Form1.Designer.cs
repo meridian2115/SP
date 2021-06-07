@@ -29,11 +29,11 @@ namespace SP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Узел0");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Узел2");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Узел0");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Узел2");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,6 +67,9 @@ namespace SP
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +84,7 @@ namespace SP
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,14 +117,14 @@ namespace SP
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode10.Name = "Узел0";
-            treeNode10.Text = "Узел0";
-            treeNode11.Name = "Узел2";
-            treeNode11.Text = "Узел2";
-            treeNode12.Name = "Узел0";
-            treeNode12.Text = "Узел0";
+            treeNode25.Name = "Узел0";
+            treeNode25.Text = "Узел0";
+            treeNode26.Name = "Узел2";
+            treeNode26.Text = "Узел2";
+            treeNode27.Name = "Узел0";
+            treeNode27.Text = "Узел0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode12});
+            treeNode27});
             this.treeView1.Size = new System.Drawing.Size(300, 761);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -166,6 +170,7 @@ namespace SP
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -193,7 +198,7 @@ namespace SP
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(415, 604);
+            this.dataGridView1.Size = new System.Drawing.Size(415, 504);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -249,6 +254,7 @@ namespace SP
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.richTextBox2);
             this.panel5.Controls.Add(this.button2);
@@ -423,6 +429,35 @@ namespace SP
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(397, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Сохранить скрипт";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.richTextBox3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(3, 507);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(415, 100);
+            this.panel6.TabIndex = 1;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox3.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(415, 100);
+            this.richTextBox3.TabIndex = 0;
+            this.richTextBox3.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,6 +484,7 @@ namespace SP
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -488,6 +524,9 @@ namespace SP
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RichTextBox richTextBox3;
     }
 }
 
