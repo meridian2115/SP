@@ -58,11 +58,55 @@ namespace SP
                 CopyNode(node, dest.Nodes);
             }
         }
-        
+
+        private List<TreeNode> CurrentNodeMatches = new List<TreeNode>();
+
+        private int LastNodeIndex = 0;
+
+        private string LastSearchText;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            treeView1.CollapseAll();
             //Реализовать поиск
+            string searchText = textBox1.Text;
+            if (string.IsNullOrEmpty(searchText)||searchText.Length<3)
+            {
+                return;
+            };
+            if (LastSearchText != searchText)
+                {
+                    CurrentNodeMatches.Clear();
+                    LastSearchText = searchText;
+                    LastNodeIndex = 0;
+                    SearchNodes(searchText, treeView1.Nodes[0]);
+                }
+            if (LastNodeIndex >= 0 && CurrentNodeMatches.Count > 0 && LastNodeIndex < CurrentNodeMatches.Count)
+            {
+                TreeNode selectedNode = CurrentNodeMatches[LastNodeIndex];
+                LastNodeIndex++;
+                this.treeView1.SelectedNode = selectedNode;
+                this.treeView1.SelectedNode.Expand();
+                //this.treeView1.Select();
+
+            }
+        }
+
+        private void SearchNodes(string SearchText, TreeNode StartNode)
+        {
+            TreeNode node = null;
+            while (StartNode != null)
+            {
+                if (StartNode.Text.ToLower().Contains(SearchText.ToLower()))
+                {
+                    CurrentNodeMatches.Add(StartNode);
+                };
+                if (StartNode.Nodes.Count != 0)
+                {
+                    SearchNodes(SearchText, StartNode.Nodes[0]);
+                };
+                StartNode = StartNode.NextNode;
+            };
         }
 
         private void treeView1_DoubleClick(object sender, EventArgs e)

@@ -29,11 +29,11 @@ namespace SP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Узел0");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Узел2");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Узел0");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Узел2");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode28,
+            treeNode29});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -117,14 +117,14 @@ namespace SP
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode25.Name = "Узел0";
-            treeNode25.Text = "Узел0";
-            treeNode26.Name = "Узел2";
-            treeNode26.Text = "Узел2";
-            treeNode27.Name = "Узел0";
-            treeNode27.Text = "Узел0";
+            treeNode28.Name = "Узел0";
+            treeNode28.Text = "Узел0";
+            treeNode29.Name = "Узел2";
+            treeNode29.Text = "Узел2";
+            treeNode30.Name = "Узел0";
+            treeNode30.Text = "Узел0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode27});
+            treeNode30});
             this.treeView1.Size = new System.Drawing.Size(300, 761);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -198,7 +198,7 @@ namespace SP
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(415, 504);
+            this.dataGridView1.Size = new System.Drawing.Size(415, 372);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -444,9 +444,9 @@ namespace SP
             // 
             this.panel6.Controls.Add(this.richTextBox3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(3, 507);
+            this.panel6.Location = new System.Drawing.Point(3, 375);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(415, 100);
+            this.panel6.Size = new System.Drawing.Size(415, 232);
             this.panel6.TabIndex = 1;
             // 
             // richTextBox3
@@ -454,7 +454,7 @@ namespace SP
             this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox3.Location = new System.Drawing.Point(0, 0);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(415, 100);
+            this.richTextBox3.Size = new System.Drawing.Size(415, 232);
             this.richTextBox3.TabIndex = 0;
             this.richTextBox3.Text = "";
             // 
