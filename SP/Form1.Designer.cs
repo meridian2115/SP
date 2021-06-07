@@ -29,11 +29,11 @@ namespace SP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Узел0");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Узел2");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode35});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Узел0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Узел2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,9 +47,12 @@ namespace SP
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -67,9 +70,6 @@ namespace SP
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,13 +78,13 @@ namespace SP
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -117,14 +117,14 @@ namespace SP
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode34.Name = "Узел0";
-            treeNode34.Text = "Узел0";
-            treeNode35.Name = "Узел2";
-            treeNode35.Text = "Узел2";
-            treeNode36.Name = "Узел0";
-            treeNode36.Text = "Узел0";
+            treeNode1.Name = "Узел0";
+            treeNode1.Text = "Узел0";
+            treeNode2.Name = "Узел2";
+            treeNode2.Text = "Узел2";
+            treeNode3.Name = "Узел0";
+            treeNode3.Text = "Узел0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode36});
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(300, 761);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -232,6 +232,24 @@ namespace SP
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.richTextBox3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(3, 375);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(415, 232);
+            this.panel6.TabIndex = 1;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox3.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(415, 232);
+            this.richTextBox3.TabIndex = 0;
+            this.richTextBox3.Text = "";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.richTextBox1);
@@ -263,6 +281,17 @@ namespace SP
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(570, 300);
             this.panel5.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(397, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Сохранить скрипт";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 
@@ -423,40 +452,11 @@ namespace SP
             // 
             this.button1.Location = new System.Drawing.Point(14, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 23);
+            this.button1.Size = new System.Drawing.Size(411, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Сохранить Json";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(397, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Сохранить скрипт";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.richTextBox3);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(3, 375);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(415, 232);
-            this.panel6.TabIndex = 1;
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox3.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(415, 232);
-            this.richTextBox3.TabIndex = 0;
-            this.richTextBox3.Text = "";
             // 
             // Form1
             // 
@@ -476,6 +476,7 @@ namespace SP
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -484,7 +485,6 @@ namespace SP
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
