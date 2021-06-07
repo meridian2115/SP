@@ -108,7 +108,7 @@ namespace SP
                 StartNode = StartNode.NextNode;
             };
         }
-
+        private string previous_node = "";
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode.ImageIndex != 0)
@@ -138,6 +138,7 @@ namespace SP
                     i++;
                 }
                 richTextBox3.Text += $"\r\nПолучен список фильтров для отчета с uuid {edit_report.RS_repository_uuid}";
+                treeView1.SelectedNode.ForeColor = Color.Blue;
             }
             button3.Enabled = false;
         }
