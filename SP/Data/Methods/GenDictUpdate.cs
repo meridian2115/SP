@@ -34,7 +34,7 @@ namespace SP.Data.Methods
                 $"else\r\n" + // 123
                 $"\tupdate ai.dict_descr_ai\r\n" +
                 $"\tset\r\n";
-            result += !is_hier ? $"\t\tsql_str ='{sql_str}',\r\n" : $"\t\thier_sql_str = '{hier_sql}'\r\n";
+            result += !is_hier ? $"\t\tsql_str ='{sql_str}',\r\n" : $"\t\thier_sql_str = '{hier_sql}',\r\n";
             result += $"\t\tis_hierarchy = {is_hier}\r\n" +
                 $"\twhere upper(dictionary_code)=upper('{dict_code}');\r\n" +
                 $"end if;\r\n" +

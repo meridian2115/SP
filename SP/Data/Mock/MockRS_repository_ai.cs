@@ -32,23 +32,30 @@ namespace SP.Data.Mock
         public RS_repository_ai GetReport(string uuid) {
             RS_repository_ai report = new RS_repository_ai();
             NpgsqlDataReader result = ExecuteSql.selectSql($"select rs_repository_uuid, rs_catalog_uuid, report_setting_name, report_setting_structure, enabled_flag, start_date_active, end_date_active, created_by, creation_date, last_updated_by, last_update_date, is_deleted from ai.rs_repository_ai where rs_repository_uuid = '{uuid}'");
-            if (result.HasRows)
+            try
             {
-                foreach (DbDataRecord p in result)
+                if (result.HasRows)
                 {
-                    report.RS_repository_uuid = p["rs_repository_uuid"].ToString();
-                    report.RS_catalog_uuid = p["rs_catalog_uuid"].ToString();
-                    report.Report_setting_name = p["report_setting_name"].ToString();
-                    report.Report_setting_structure = (byte[])p["report_setting_structure"];
-                    report.Enabled_flag = (bool)p["enabled_flag"];
-                    //report.Start_date_active = (DateTime)p["start_date_active"];
-                    //report.End_date_active = (p["end_date_active"].ToString() != "") ? (DateTime)p["end_date_active"] : DateTime.Now;
-                    report.Created_by = p["created_by"].ToString();
-                    //report.Creation_date = (DateTime)p["creation_date"];
-                    //report.Last_updated_by = (DateTime)p["last_updated_by"];
-                    //report.Last_update_date = (DateTime)p["last_update_date"];
-                    report.Is_deleted = (bool)p["is_deleted"];
+                    foreach (DbDataRecord p in result)
+                    {
+                        report.RS_repository_uuid = p["rs_repository_uuid"].ToString();
+                        report.RS_catalog_uuid = p["rs_catalog_uuid"].ToString();
+                        report.Report_setting_name = p["report_setting_name"].ToString();
+                        report.Report_setting_structure = (byte[])p["report_setting_structure"];
+                        report.Enabled_flag = (bool)p["enabled_flag"];
+                        //report.Start_date_active = (DateTime)p["start_date_active"];
+                        //report.End_date_active = (p["end_date_active"].ToString() != "") ? (DateTime)p["end_date_active"] : DateTime.Now;
+                        report.Created_by = p["created_by"].ToString();
+                        //report.Creation_date = (DateTime)p["creation_date"];
+                        //report.Last_updated_by = (DateTime)p["last_updated_by"];
+                        //report.Last_update_date = (DateTime)p["last_update_date"];
+                        report.Is_deleted = (bool)p["is_deleted"];
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                //Иногда БД не отвечает
             }
             return report;
         }

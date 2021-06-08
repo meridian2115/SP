@@ -70,6 +70,10 @@ namespace SP
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -84,6 +88,7 @@ namespace SP
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -431,6 +436,10 @@ namespace SP
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -452,11 +461,43 @@ namespace SP
             // 
             this.button1.Location = new System.Drawing.Point(14, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(411, 23);
+            this.button1.Size = new System.Drawing.Size(116, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Сохранить Json";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "GUID отчета";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(93, 22);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(345, 20);
+            this.textBox3.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(93, 48);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(345, 20);
+            this.textBox4.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "GUID папки";
             // 
             // Form1
             // 
@@ -484,6 +525,8 @@ namespace SP
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -527,6 +570,10 @@ namespace SP
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
     }
 }
 

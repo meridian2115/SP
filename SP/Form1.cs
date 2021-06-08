@@ -118,6 +118,8 @@ namespace SP
                 RS_repository_ai edit_report = report.GetReport(treeView1.SelectedNode.Name);
                 report_uuid = treeView1.SelectedNode.Name;
                 textBox2.Text = edit_report.Report_setting_name;
+                textBox3.Text = edit_report.RS_repository_uuid;
+                textBox4.Text = edit_report.RS_catalog_uuid;
                 checkBox1.Checked = edit_report.Enabled_flag;
                 //json_text.Text = Encoding.UTF8.GetString(edit_report.Report_setting_structure);
                 tmp = JsonConvert.DeserializeObject<Root>(Encoding.UTF8.GetString(edit_report.Report_setting_structure));
@@ -138,7 +140,7 @@ namespace SP
                     }
                     i++;
                 }
-                richTextBox3.Text += $"\r\nПолучен список фильтров для отчета с uuid {edit_report.RS_repository_uuid}";
+                richTextBox3.Text += $"\r\nПолучен список фильтров для отчета {edit_report.Report_setting_name} с uuid {edit_report.RS_repository_uuid}";
                 treeView1.SelectedNode.ForeColor = Color.Blue;
             }
             button3.Enabled = false;
@@ -198,13 +200,23 @@ namespace SP
             richTextBox2.Clear();
             //Запрос в таблицу report_filters
             NpgsqlDataReader result2 = ExecuteSql.selectSql($"select new_sql_str, new_dict_code from dw.report_filters where dict_code = '{z}' limit 1");
-            if (result2.HasRows) {
-                foreach (DbDataRecord p in result2)
+            try
+            {
+                if (result2.HasRows)
                 {
-                    richTextBox2.Text += "--"+p["new_dict_code"].ToString();
-                    richTextBox2.Text += "\r\n" + p["new_sql_str"].ToString();
+                    foreach (DbDataRecord p in result2)
+                    {
+                        richTextBox2.Text += "--" + p["new_dict_code"].ToString();
+                        richTextBox2.Text += "\r\n" + p["new_sql_str"].ToString();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                //
+            }
+            
             if (richTextBox1.Text == richTextBox2.Text)
             {
                 label6.Text = "Соответствует report_filters";
