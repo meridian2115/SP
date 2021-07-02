@@ -199,7 +199,7 @@ namespace SP
 
             richTextBox2.Clear();
             //Запрос в таблицу report_filters
-            NpgsqlDataReader result2 = ExecuteSql.selectSql($"select new_sql_str, new_dict_code from dw.report_filters where dict_code = '{z}' limit 1");
+            /*NpgsqlDataReader result2 = ExecuteSql.selectSql($"select new_sql_str, new_dict_code from dw.report_filters where dict_code = '{z}' limit 1");
             try
             {
                 if (result2.HasRows)
@@ -215,7 +215,7 @@ namespace SP
             {
 
                 //
-            }
+            }*/
             
             if (richTextBox1.Text == richTextBox2.Text)
             {
@@ -268,6 +268,23 @@ namespace SP
             // сохраняем текст в файл
             File.WriteAllText(filename, richTextBox1.Text);
             richTextBox3.Text += $"\r\nСохранение скрипта {saveFile.FileName} выполнено успешно";
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                Properties.Settings.Default.serverName = "sp-test-poi-db.otr.ru";
+                checkBox2.Text = "TEST";
+                checkBox2.ForeColor = Color.Red;
+            }
+            else
+            {
+                Properties.Settings.Default.serverName = "sp-dev-poi-db";
+                checkBox2.Text = "DEV";
+                checkBox2.ForeColor = Color.Green;
+            }
+            Properties.Settings.Default.Save();
         }
     }
 }

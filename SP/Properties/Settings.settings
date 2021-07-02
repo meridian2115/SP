@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="serverName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sp-dev-poi-db</Value>
+      <Value Profile="(Default)">sp-test-poi-db.otr.ru</Value>
     </Setting>
     <Setting Name="serverPort" Type="System.String" Scope="User">
       <Value Profile="(Default)">5432</Value>
