@@ -29,11 +29,11 @@ namespace SP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Узел0");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Узел2");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Узел0");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Узел2");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Узел0", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -75,6 +75,7 @@ namespace SP
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -123,14 +124,14 @@ namespace SP
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 36);
             this.treeView1.Name = "treeView1";
-            treeNode13.Name = "Узел0";
-            treeNode13.Text = "Узел0";
-            treeNode14.Name = "Узел2";
-            treeNode14.Text = "Узел2";
-            treeNode15.Name = "Узел0";
-            treeNode15.Text = "Узел0";
+            treeNode25.Name = "Узел0";
+            treeNode25.Text = "Узел0";
+            treeNode26.Name = "Узел2";
+            treeNode26.Text = "Узел2";
+            treeNode27.Name = "Узел0";
+            treeNode27.Text = "Узел0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15});
+            treeNode27});
             this.treeView1.Size = new System.Drawing.Size(300, 761);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -483,6 +484,7 @@ namespace SP
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -515,6 +517,16 @@ namespace SP
             this.checkBox2.Text = "TEST";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(242, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(154, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Засинхронить отчет";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -593,6 +605,7 @@ namespace SP
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button button4;
     }
 }
 

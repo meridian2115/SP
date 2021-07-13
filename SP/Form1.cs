@@ -286,5 +286,11 @@ namespace SP
             }
             Properties.Settings.Default.Save();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Синхронит отчет с теста на дев или наоборот
+
+        }
     }
 }

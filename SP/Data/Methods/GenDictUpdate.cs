@@ -25,7 +25,7 @@ namespace SP.Data.Methods
                 : $"\tinsert into ai.dict_descr_ai(dictionary_code,hier_sql_str,dictionary_name,ba_id,ba_uuid,is_hierarchy)\r\n";
             result += $"\tvalues\r\n" +
                 $"\t\t('{dict_code}',\r\n";
-            result += !is_hier ? $"\t\t'{sql_str}', \r\n" : $"\t\t'{hier_sql}'\r\n";
+            result += !is_hier ? $"\t\t'{sql_str}', \r\n" : $"\t\t'{hier_sql}', \r\n";
             result += $"\t\t'{dict_name}', \r\n" +
                 $"\t\tl_bas_ai.ba_id, \r\n" +
                 $"\t\tl_bas_ai.ba_uuid, \r\n" +
